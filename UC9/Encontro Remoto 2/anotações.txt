@@ -1,0 +1,6 @@
+- Instalar extensões VSCode
+- Criar projeto de console
+- Criar classes
+- Criar interfaces
+- Fazer herança 
+- Instanciar objetos Pf e Pj
