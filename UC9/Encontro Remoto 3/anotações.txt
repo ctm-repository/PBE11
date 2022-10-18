@@ -1,0 +1,5 @@
+- Criar classe de Endereço
+- Implementar métodos de pagar imposto para Pessoa Física e Pessoa Jurídica
+- Testar métodos de pagar imposto
+- Usar a biblioteca System.Globalization
+- Imprimir dados no console, utilizando interpolação e quebra de linhas
