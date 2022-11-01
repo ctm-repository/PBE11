@@ -11,6 +11,7 @@ namespace Cadastro_Pessoas_PBE11.Classes
         public float Rendimento { get; set; }
 
         //método abstrato herdado da interface
-        public abstract float PagarImposto(float rendimento);        
+        public abstract float PagarImposto(float rendimento);
+             
     }
 }

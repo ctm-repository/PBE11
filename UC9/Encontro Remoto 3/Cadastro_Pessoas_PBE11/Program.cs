@@ -35,7 +35,6 @@ Endereço: {novaPf.Endereco.Logradouro}, {novaPf.Endereco.Numero}, {novaPf.Ender
 ");
 
 
-
 PessoaJuridica novaPj = new PessoaJuridica();
 novaPj.RazaoSocial = "Senai Informática";
 novaPj.Cnpj = "76.640.958/0001-09";

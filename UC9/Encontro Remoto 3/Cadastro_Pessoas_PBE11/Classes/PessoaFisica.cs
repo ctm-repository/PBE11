@@ -16,7 +16,7 @@ namespace Cadastro_Pessoas_PBE11.Classes
                 return 0;
             }else if (rendimento > 1500 && rendimento <= 3500){
                 return rendimento * 0.02f;
-            }else if (rendimento > 3500 && rendimento < 6000){
+            }else if (rendimento > 3500 && rendimento <= 6000){
                 return rendimento * 0.035f;
             }else{
                 return rendimento * 0.05f;
