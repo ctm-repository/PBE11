@@ -1,6 +1,11 @@
 ﻿using System.Globalization;
 using Cadastro_Pessoas_PBE11.Classes;
 
+
+
+
+
+
 PessoaFisica novaPf = new PessoaFisica();
 novaPf.Nome = "Mayck";
 novaPf.Cpf = "15757055596";
