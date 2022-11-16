@@ -1,0 +1,5 @@
+- Criar um submenu para Pessoa Fisica
+	- opção 1 : Cadastrar
+	- opção 3 : Listar
+
+obs: o cadastro se dará dinamicamente e os objetos serão armazenados em uma lista
