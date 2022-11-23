@@ -181,36 +181,37 @@ do
             break;
 
         case "2":
-            PessoaJuridica novaPj = new PessoaJuridica();
-            novaPj.Nome = "Escola Senai de Informática";
-            novaPj.RazaoSocial = "Senai Paulo Skaf";
-            novaPj.Cnpj = "76640958000109";
-            novaPj.Rendimento = 1000000.92f;
-
-            Endereco endPj = new Endereco();
-            endPj.Logradouro = "Rua Niterói";
-            endPj.Numero = 180;
-            endPj.Complemento = "Senai Informática";
-            endPj.Comercial = true;
-
-            novaPj.Endereco = endPj;
-
+            PessoaJuridica novaPessoaJuridica = new PessoaJuridica();
+            Endereco novoEndereco = new Endereco();
             PessoaJuridica metodosPj = new PessoaJuridica();
 
-            metodosPj.Inserir(novaPj);
+            novoEndereco.Logradouro = "Rua Niterói";
+            novoEndereco.Numero = 180;
+            novoEndereco.Complemento = "São Caetano do Sul - SP";
+            novoEndereco.Comercial = true;
 
+            novaPessoaJuridica.Nome = "Senai";
+            novaPessoaJuridica.RazaoSocial = "Escola Senai de Informática Ltda";
+            novaPessoaJuridica.Cnpj = "58352125000149";
+            novaPessoaJuridica.Rendimento = 100000.99f;
+            novaPessoaJuridica.Endereco = novoEndereco;
+
+            //chamada do método para inserir os dados de novaPessoaJuridica dentro de um arquivo csv
+            metodosPj.Inserir(novaPessoaJuridica);
+            
+            //chamada para listar os itens salvos dentro do csv
             List<PessoaJuridica> listaPj = metodosPj.LerArquivo();
 
             foreach (PessoaJuridica cadaItem in listaPj)
             {
                 Console.WriteLine(@$"
-                Nome fantasia: {cadaItem.Nome}
+                Nome Fantasia: {cadaItem.Nome}
                 Cnpj: {cadaItem.Cnpj}
                 Razão Social: {cadaItem.RazaoSocial}
                 ");
-                Console.WriteLine("Aperte ENTER para continuar");
-                Console.ReadLine();
-            }
+                Console.WriteLine($"Aperte 'Enter' para continuar");
+                Console.ReadLine();               
+            }            
             break;
 
         case "0":

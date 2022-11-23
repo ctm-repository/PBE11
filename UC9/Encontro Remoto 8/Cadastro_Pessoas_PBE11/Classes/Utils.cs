@@ -26,9 +26,11 @@ namespace Cadastro_Pessoas_PBE11.Classes
                 Directory.CreateDirectory(pasta);
             }
 
-            if (!File.Exists(caminho))
+            //se NÃO existir um arquivo nesse caminho
+            if(!File.Exists(caminho))
             {
-                File.Create(caminho);
+                //então cria-se o arquivo PessoaJuridica.csv
+                using(File.Create(caminho)){}
             }
         }
     }                       

@@ -60,27 +60,38 @@ namespace Cadastro_Pessoas_PBE11.Classes
         }
 
 
-        //método para inserir um objeto de pessoa jurídica em um arquivo csv
+        // método para inserir uma pessoa juridica em um arquivo csv 
         public void Inserir(PessoaJuridica pj)
         {
+            //chamada do método para verificar se o caminho já existe, ou seja a pasta e o arquivo
             Utils.VerificarPastaArquivo(Caminho);
 
-            string[] pjStrings = { $"{pj.Nome},{pj.Cnpj},{pj.RazaoSocial}" };
+            //criado um array de strings que recebe o objeto transformado em strings, ou seja, em partes
+            //feito dessa maneira pq o método que vai inserir os dados espera receber um array de strings 
+            //padrão que será salvo dentro do arquivo
+            string[] pjStrings = {$"{pj.Nome},{pj.Cnpj},{pj.RazaoSocial}"};
 
+            //metodo que salva o conteúdo dentro do arquivo
+            //AppendAllLines = método que vai inserir todas as linhas dentro do arquivo
             File.AppendAllLines(Caminho, pjStrings);
         }
 
-        //método para ler aquivos armazenados em um arquivo csv
+        // método para listar os itens do arquivo csv
         public List<PessoaJuridica> LerArquivo()
         {
+            //criado uma lista para armazenar os itens lidos no csv
             List<PessoaJuridica> listaPj = new List<PessoaJuridica>();
 
+            //criado um array de strings onde será armazenados os itens dentro do csv
             string[] linhas = File.ReadAllLines(Caminho);
 
+            //criado um foreach para leitura de cada item do array "linhas"
             foreach (string cadaLinha in linhas)
             {
+                //array para armazenar os atributos do objeto, ou seja, vamos pegar o padrão e separar onde tem uma vírgula
                 string[] atributos = cadaLinha.Split(",");
 
+                //criamos um objeto para atribuir os valores lidos nele
                 PessoaJuridica cadaPj = new PessoaJuridica();
 
                 cadaPj.Nome = atributos[0];
